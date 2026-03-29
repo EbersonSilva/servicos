@@ -1,10 +1,13 @@
 # Agenda de Servicos
 
-Aplicacao React (Vite) para vitrine de servicos com agendamento por horario:
+Aplicacao React (Vite) para vitrine de servicos com solicitacao de agendamento por horario e envio direto para WhatsApp.
 
-- listagem com filtros e busca
+## Funcionalidades
+
+- listagem de servicos com busca, categoria e ordenacao
 - detalhe do servico com data e horario livres
-- envio direto para WhatsApp com resumo
+- envio direto para WhatsApp com resumo da solicitacao
+- fallback automatico para dados locais quando API estiver indisponivel
 
 ## Stack
 
@@ -21,6 +24,15 @@ Aplicacao React (Vite) para vitrine de servicos com agendamento por horario:
 - `npm run build`: build de producao
 - `npm run lint`: validacao de lint
 - `npm run preview`: preview local da build
+
+## Como rodar
+
+1. Instale as dependencias:
+	- `npm install`
+2. Inicie o frontend:
+	- `npm run dev`
+3. (Opcional) Inicie API fake junto com o frontend:
+	- `npm run dev:full`
 
 ## Rotas da aplicacao
 
@@ -61,6 +73,22 @@ Variavel recomendada:
 - `VITE_WHATSAPP_SELLER=5511999999999`
 
 Defina em arquivo `.env` para desenvolvimento e em Environment Variables no Vercel para producao.
+
+Exemplo de `.env`:
+
+- `VITE_WHATSAPP_SELLER=5511999999999`
+
+## Personalizacao de regras de agendamento
+
+Se quiser mudar validacoes como data/hora obrigatoria, servico ativo ou montar a mensagem final do WhatsApp, edite:
+
+- `src/features/catalog/pages/ProductDetailPage.jsx`
+
+Pontos principais nesse arquivo:
+
+- funcao `handleSendToWhatsApp`: validacoes antes do envio
+- bloco `summary`: texto enviado para o WhatsApp
+- campos `requestedDate` e `requestedTime`: captura de data e horario
 
 ## Camada de servico e fallback
 
