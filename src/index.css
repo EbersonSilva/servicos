@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: hsl(46 63% 98%);
+  --color-surface: hsl(0 0% 100% / 0.9);
+  --color-text: hsl(196 28% 18%);
+  --color-muted: hsl(195 11% 35%);
+  --color-accent: hsl(188 71% 34%);
+  --color-border: hsl(196 24% 78% / 0.8);
+
+  --font-body: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+
+  --shadow-soft: 0 16px 30px hsl(186 30% 34% / 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100svh;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.45;
+  background:
+    radial-gradient(circle at 12% 15%, hsl(34 100% 80% / 0.35), transparent 28%),
+    radial-gradient(circle at 84% 82%, hsl(188 88% 70% / 0.3), transparent 32%),
+    var(--color-bg);
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.brand-badge img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.brand-badge strong {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
