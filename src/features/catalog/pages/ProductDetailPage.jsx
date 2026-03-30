@@ -4,7 +4,7 @@ import { BRAND } from '../../../app/brand'
 import { getProductById } from '../services/catalogService'
 import '../styles/catalog.css'
 
-const SELLER_WHATSAPP = import.meta.env.VITE_WHATSAPP_SELLER ?? '5511948551437'
+const SELLER_WHATSAPP = import.meta.env.VITE_WHATSAPP_SELLER ?? '551161505256'
 
 function formatInputToIso(dateValue, timeValue) {
   if (!dateValue || !timeValue) {
