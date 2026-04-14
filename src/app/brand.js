@@ -1,4 +1,4 @@
 export const BRAND = {
-  name: 'Agenda do Cliente',
-  logo: '/favicon.svg',
+  name: 'Melissa Gomes - Studio Beauty',
+  logo: '/2.png',
 }

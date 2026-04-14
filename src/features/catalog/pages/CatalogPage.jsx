@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { BRAND } from '../../../app/brand'
+import headerImage from '../../../assets/hero.png'
 import { CatalogFilters } from '../components/CatalogFilters'
 import { ProductGrid } from '../components/ProductGrid'
 import { categories } from '../data/products'
@@ -122,17 +123,21 @@ export function CatalogPage() {
   return (
     <main className="catalog-shell">
       <header className="catalog-header">
-        <div>
+        <div className="catalog-header-content">
           <div className="brand-badge">
             <img src={BRAND.logo} alt={`Logo ${BRAND.name}`} />
             <strong>{BRAND.name}</strong>
           </div>
-          <p className="catalog-kicker">Servicos</p>
+          <p className="catalog-kicker">Meus Servicos</p>
           <h1>Agende servicos por horario</h1>
           <p className="catalog-subtitle">
             Monte sua agenda com busca, filtro de categoria e solicite o horario ideal para voce.
           </p>
         </div>
+
+        {/* <div className="catalog-header-visual" aria-hidden="true">
+          <img src={headerImage} alt="" />
+        </div> */}
       </header>
 
       <CatalogFilters
